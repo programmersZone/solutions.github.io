@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution of shuffle-the-array</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main__2_tD">
+        <div class="content__1Nro" id="discuss-container">
+            <div class="root__3BAc">
+                <div class="topic-container__1JMG">
+                    <div class="main__11QT">
+                        <div class="container__K-8V">
+                            <div class="content-area__2vnF">
+                                <h1>1470. Shuffle The Array - Leetcode</h1>
+                                <div class="discuss-markdown-container">
+                                    <p></p>
+                                    
+                                    <p><strong>COMPLEXITY:</strong></p>
+                                    <p>
+                                    </p>
+                                    <ul>
+                                        <li><strong>Time: O(n)</strong>, where n is the given number, which is half of
+                                            the length of the array</li>
+                                        <li><strong>Space: O(1)</strong>, in-place<br></li>
+                                    </ul>
+                                    <p></p>
+                                    <p>Since we need to solve it in 0(1) space or <strong>in-place</strong>, we will use
+                                        the original array.</p>
+                                    <p>
+                                    </p>
+                                    <p><strong>BASIC IDEA:</strong></p>
+                                    <p>
+                                    </p>
+                                    <ol>
+                                        <li><strong>Store the pair of numbers</strong> and then</li>
+                                        <li><strong>Retreive each number,</strong> from that pair where they were
+                                            stored, <strong>one by one</strong> and place them at their desired
+                                            positions.<br>
+                                            <br>
+                                        </li>
+                                    </ol>
+                                    <p></p>
+                                    <p><strong>GENERAL EXAMPLE:</strong><br>
+                                        <em>Suppose, you are performing a task and someone gives you another task, in
+                                            order to avoid disturbance in the flow of previous task, you can keep both
+                                            the tasks on one side and complete the task one by one according to the
+                                            requirement.</em>
+                                    </p>
+                                    <p>
+                                    </p>
+                                    <p><strong>SAME CONCEPT FOR ARRAYS:</strong><br>
+                                        <em>In order to avoid overwriting values, store the "pair of numbers" in the
+                                            right half of the array and retrieve it one by one according to the
+                                            requirement.</em><br>
+                                        <br><br>
+                                        <strong># <u>DETAILED EXPLANATION IS GIVEN BELOW THE CODE</u> #</strong><br>
+                                        <br><br>
+                                        <u><strong>JAVA CODE</strong></u>
+                                    </p>
+                                    <script src="https://gist.github.com/shapnesht/ce76107fbc09591d8c28f49311bd3e0e.js"></script>
+                                    <hr>
+                                    <p></p>
+                                    <p><u><strong>C++ CODE</strong></u> --&gt; (0ms to 4ms) Runtime Fluctuates a lot in
+                                    case of C++</p>
+                                    <script src="https://gist.github.com/shapnesht/d6476e3560c61877b1a468ae6322272b.js"></script>
+                                    <hr>
+                                    <p></p>
+                                    <p><strong>Using Bitwise Operator to make it a bit faster</strong><br><br>
+                                        <u><strong>JAVA CODE</strong></u>
+                                    </p>
+                                    <script src="https://gist.github.com/shapnesht/2642aad97897f6353b9d851e1aa9e43b.js"></script>
+                                    <hr>
+                                    <p></p>
+                                    <p><u><strong>C++ CODE</strong></u> --&gt; (0ms to 4ms) Runtime Fluctuates a lot in
+                                        case of C++</p>
+                                    <script src="https://gist.github.com/shapnesht/2ae20c083d1613a1dbfc9e4a94c1f2ba.js"></script>
+                                    <hr>
+                                    <p></p>
+                                    <p><u><strong>EXPLANATION:</strong></u></p>
+                                    <p>
+                                    </p>
+                                    <p><strong>Let's understand in general term:</strong></p>
+                                    <p>
+                                    </p>
+                                    <p>Suppose we have 2 numbers <code>num1 = 4</code> and <code>num2 = 9</code> and
+                                        <code>maxValue = 10</code><br>
+                                        <strong>Formula:</strong><br>
+                                        <strong>to store</strong> -&gt; pair = (num2 × maxValue) + num1<br>
+                                        <strong>to retrieve</strong> -&gt; pair % maxValue and pair / maxValue
+                                    </p>
+                                    <p>
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            <p></p>
+                                            <p><strong>Storing the pair of numbers</strong></p>
+                                            <p>
+                                            </p>
+                                            <p>(9 × 10) + 4 = 94 --&gt; from above formula (num2 × maxValue) + num1<br>
+                                                <strong>94 is stored</strong>
+                                            </p>
+                                            <p>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p></p>
+                                            <p><strong>Retrieving each number one by one</strong></p>
+                                            <p>
+                                            </p>
+                                            <p>94 % 10 = 4<br>
+                                                <strong>we got first number as 4</strong>
+                                            </p>
+                                            <p>
+                                            </p>
+                                            <p>94 / 10 = 9<br>
+                                                <strong>we got second number as 9</strong>
+                                            </p>
+                                            <p>
+                                            </p>
+                                        </li>
+                                    </ol>
+                                    <p></p>
+                                    <p>Same idea goes for large cases and array as well but instead of 10, we will take
+                                        1024 to store pairs and retrieve each number<br>
+                                        Here, we taking 1024 because of the given constraints
+                                        <code>1 &lt;= nums[i] &lt;= 10^3</code> i.e. the largest number in the array
+                                        will be 1000</p>
+                                    <p>
+                                    </p>
+                                    <p>Now,<br>
+                                        <strong>Binary representation</strong> of <strong>1000</strong> is
+                                        <strong>1111101000</strong>, consisting of total <strong>10 bits</strong><br>
+                                        <strong>Binary representation</strong> of <strong>1024</strong> is
+                                        <strong>10000000000</strong>, consisting of total <strong>11 bits</strong><br>
+                                        and if we multiply 1000 with 1024 i.e. <strong>(1000 * 1024)</strong>, we will
+                                        get <strong>1024000</strong><br>
+                                        <strong>Binary representation</strong> of <strong>1024000</strong> is
+                                        <strong>11111010000000000000</strong>, consisting of total <strong>20
+                                            bits</strong> which is less than the number of bits
+                                        <strong>(32bits)</strong> of int data type, so we can store the number pairs(by
+                                        multiplying one number with 1024 and adding another number to it) to retrieve
+                                        each indivisual number later on(by taking out the remainder and the
+                                        quotient).<br>
+                                        eg: suppose we have an <strong>array of length 4</strong> and <strong>n is
+                                            2</strong><br>
+                                        nums = [5, 2, 1000, 3] and n = 2
+                                    </p>
+                                    <p>
+                                    </p>
+                                    <ol>
+                                        <li>
+                                            <p></p>
+                                            <p><strong>We will store the pair of numbers first</strong></p>
+                                            <p>
+                                            </p>
+                                            <p>According to algorithm</p>
+                                            <p>
+                                            </p>
+                                            <pre><code><span class="hljs-keyword">int</span> i;
+                                <span class="hljs-comment">// to store the pair of numbers in right half of the original array</span>
+                                <span class="hljs-keyword">for</span>(i = n; i &lt; <span class="hljs-built_in">len</span>; i++)
+                                nums[i] = (nums[i] * <span class="hljs-number">1024</span>) + nums[i - n];
+                                </code></pre>
+                                            <ul>
+                                                <li>
+                                                    <p></p>
+                                                    <p><strong>Iteration 1:</strong><br>
+                                                        when i = 2, (i = 2 because value of n is 2)<br>
+                                                        nums[2] = (1000 × 1024) + 5<br>
+                                                        so, nums[2] = 1024005</p>
+                                                    <p>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p></p>
+                                                    <p><strong>Iteration 2:</strong><br>
+                                                        when i = 3,<br>
+                                                        nums[3] = (3 × 1024) + 2<br>
+                                                        so, nums[3] = 3074</p>
+                                                    <p>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <p></p>
+                                            <p><strong>Now, the original array</strong><br>
+                                                [5, 2, 1000, 3]<br>
+                                                &nbsp;0&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3
+                                                &nbsp;&nbsp;&lt;-- Indexes<br>
+                                                <strong>becomes</strong><br>
+                                                [5, 2, 1024005, 3074]<br>
+                                                &nbsp;0&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3
+                                                &nbsp;&nbsp;&lt;-- Indexes
+                                            </p>
+                                            <p>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p></p>
+                                            <p><strong>We will retrieve the numbers one by one from the pairs which we
+                                                    have stored at 2nd and 3rd index</strong></p>
+                                            <p>
+                                            </p>
+                                            <p>According to algorithm</p>
+                                            <p>
+                                            </p>
+                                            <pre><code><span class="hljs-comment">// to retrive values from the pair of numbers and placing those retrieved value at their desired position</span>
+                                <span class="hljs-keyword">int</span> index = <span class="hljs-number">0</span>;
+                                <span class="hljs-keyword">for</span>(i = n; i &lt; <span class="hljs-built_in">len</span>; i++, index += <span class="hljs-number">2</span>){
+                                    nums[index] = nums[i] % <span class="hljs-number">1024</span>;
+                                    nums[index + <span class="hljs-number">1</span>] = nums[i] / <span class="hljs-number">1024</span>;
+                                }
+                                </code></pre>
+                                            <ul>
+                                                <li>
+                                                    <p></p>
+                                                    <p><strong>Iteration 1:</strong><br>
+                                                        when index = 0 and i = 2, (i = 2 because value of n is 2)<br>
+                                                        nums[0] = 1024005 % 1024 = 5<br>
+                                                        nums[1] = 1024005 / 1024 = 1000<br>
+                                                        now, index = 2 (from index += 2)</p>
+                                                    <p>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p></p>
+                                                    <p><strong>Iteration 2:</strong><br>
+                                                        when index = 2, i = 3,<br>
+                                                        nums[2] = 3074 % 1024 = 2<br>
+                                                        nums[3] = 3074 / 1024 = 3</p>
+                                                    <p>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                            <p></p>
+                                            <p>Iteration will be stopped now as the condition become false and we got
+                                                the array as following<br>
+                                                <strong>[5, 1000, 2, 3] &lt;-- Desired Output</strong><br>
+                                                &nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;3&nbsp;&nbsp;&lt;--
+                                                Indexes
+                                            </p>
+                                            <p>
+                                            </p>
+                                        </li>
+                                    </ol>
+                                    <hr>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>
